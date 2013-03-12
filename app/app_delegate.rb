@@ -9,7 +9,7 @@
 #       require 'bubble-wrap/reactor'
 #
 class AppDelegate
-  attr_accessor :bridge_mac, :bridge_ip, :connection, :cache, :switch
+  attr_accessor :bridge_mac, :bridge_ip, :cache, :switch
 
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     @phHueSDK = PHHueSDK.alloc.init
@@ -22,14 +22,15 @@ class AppDelegate
     timer = EM.add_periodic_timer 5.0 do
       blink!
     end
+
     true
   end
 
   def build_notifications_manager
     notificationManager = PHNotificationManager.defaultManager
     notificationManager.registerObject(self, withSelector: :local_connection,    forNotification: 'LOCAL_CONNECTION_NOTIFICATION')
-    notificationManager.registerObject(self, withSelector: :no_local_connection, forNotification: 'NO_LOCAL_AUTHENTICATION_NOTIFICATION')
-    notificationManager.registerObject(self, withSelector: :no_authenticated,    forNotification: 'NO_LOCAL_AUTHENTICATION_NOTIFICATION')
+    notificationManager.registerObject(self, withSelector: :no_local_connection, forNotification: 'NO_LOCAL_CONNECTION_NOTIFICATION')
+    notificationManager.registerObject(self, withSelector: :not_authenticated,   forNotification: 'NO_LOCAL_AUTHENTICATION_NOTIFICATION')
     notificationManager.registerObject(self, withSelector: :button_not_pressed,  forNotification: 'PUSHLINK_BUTTON_NOT_PRESSED_NOTIFICATION')
     notificationManager
   end
@@ -58,7 +59,6 @@ class AppDelegate
   end
 
 
-
   def local_connection(*foo)
     puts "local"
     puts foo.inspect
@@ -66,10 +66,12 @@ class AppDelegate
 
   def no_local_connection(*foo)
     puts "no local"
+    puts foo.inspect
   end
 
-  def no_authenticated(*foo)
+  def not_authenticated(*foo)
     puts "no auth"
+    puts foo.inspect
   end
 
   def button_not_pressed(*foo)
@@ -81,7 +83,7 @@ class AppDelegate
     @cache = PHBridgeResourcesReader.readBridgeResourcesCache
 
     if @cache && @cache.bridgeConfiguration && @cache.bridgeConfiguration.ipaddress
-      @phHueSDK.enableLocalConnectionUsingInterval(30)
+      @phHueSDK.enableLocalConnectionUsingInterval(30) # 30 seconds
     else
       search_bridge
     end
