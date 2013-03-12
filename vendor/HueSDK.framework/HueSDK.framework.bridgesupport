@@ -1,0 +1,870 @@
+<?xml version='1.0'?>
+<signatures version='1.0'>
+<string_constant nsstring='true' name='BRIDGE_CONFIGURATION_CACHE_UPDATED_NOTIFICATION' value='BRIDGE_CONFIGURATION_CACHE_UPDATED_NOTIFICATION'/>
+<string_constant nsstring='true' name='GROUPS_CACHE_UPDATED_NOTIFICATION' value='GROUPS_CACHE_UPDATED_NOTIFICATION'/>
+<string_constant nsstring='true' name='HEARTBEAT_PARSE_ERROR_NOTIFICATION' value='HEARTBEAT_PARSE_ERROR_NOTIFICATION'/>
+<string_constant nsstring='true' name='LIGHTS_CACHE_UPDATED_NOTIFICATION' value='LIGHTS_CACHE_UPDATED_NOTIFICATION'/>
+<string_constant nsstring='true' name='LOCAL_CONNECTION_NOTIFICATION' value='LOCAL_CONNECTION_NOTIFICATION'/>
+<string_constant nsstring='true' name='NO_LOCAL_AUTHENTICATION_NOTIFICATION' value='NO_LOCAL_AUTHENTICATION_NOTIFICATION'/>
+<string_constant nsstring='true' name='NO_LOCAL_BRIDGE_KNOWN_NOTIFICATION' value='NO_LOCAL_BRIDGE_KNOWN_NOTIFICATION'/>
+<string_constant nsstring='true' name='NO_LOCAL_CONNECTION_NOTIFICATION' value='NO_LOCAL_CONNECTION_NOTIFICATION'/>
+<string_constant nsstring='true' name='PUSHLINK_BUTTON_NOT_PRESSED_NOTIFICATION' value='PUSHLINK_BUTTON_NOT_PRESSED_NOTIFICATION'/>
+<string_constant nsstring='true' name='PUSHLINK_LOCAL_AUTHENTICATION_FAILED_NOTIFICATION' value='PUSHLINK_LOCAL_AUTHENTICATION_FAILED_NOTIFICATION'/>
+<string_constant nsstring='true' name='PUSHLINK_LOCAL_AUTHENTICATION_SUCCESS_NOTIFICATION' value='PUSHLINK_LOCAL_AUTHENTICATION_SUCCESS_NOTIFICATION'/>
+<string_constant nsstring='true' name='PUSHLINK_NO_LOCAL_BRIDGE_KNOWN_NOTIFICATION' value='PUSHLINK_NO_LOCAL_BRIDGE_KNOWN_NOTIFICATION'/>
+<string_constant nsstring='true' name='PUSHLINK_NO_LOCAL_CONNECTION_NOTIFICATION' value='PUSHLINK_NO_LOCAL_CONNECTION_NOTIFICATION'/>
+<string_constant nsstring='true' name='SCHEDULES_CACHE_UPDATED_NOTIFICATION' value='SCHEDULES_CACHE_UPDATED_NOTIFICATION'/>
+<string_constant nsstring='true' name='SDK_ERROR_DOMAIN' value='com.philips.hue.sdk'/>
+<enum name='ALERT_LSELECT' value='3'/>
+<enum name='ALERT_NONE' value='1'/>
+<enum name='ALERT_SELECT' value='2'/>
+<enum name='ALERT_UNKNOWN' value='0'/>
+<enum name='CLIP_ERROR' value='100'/>
+<enum name='COLORMODE_CT' value='2'/>
+<enum name='COLORMODE_HUE_SATURATION' value='3'/>
+<enum name='COLORMODE_NONE' value='1'/>
+<enum name='COLORMODE_UNKNOWN' value='0'/>
+<enum name='COLORMODE_XY' value='4'/>
+<enum name='COLOR_LIGHT' value='3'/>
+<enum name='CT_COLOR_LIGHT' value='1'/>
+<enum name='CT_LIGHT' value='2'/>
+<enum name='DIM_LIGHT' value='4'/>
+<enum name='EFFECT_COLORLOOP' value='2'/>
+<enum name='EFFECT_NONE' value='1'/>
+<enum name='EFFECT_UNKNOWN' value='0'/>
+<enum name='GROUP_ID_NOT_FOUND' value='43'/>
+<enum name='INVALID_ARGUMENTS' value='2'/>
+<enum name='INVALID_DATA' value='44'/>
+<enum name='INVALID_JSON' value='1'/>
+<enum name='INVALID_PARAMETERS' value='22'/>
+<enum name='INVALID_PARAMETERS_INVALID_METHOD' value='25'/>
+<enum name='INVALID_PARAMETERS_MISSING_METHOD' value='24'/>
+<enum name='INVALID_PARAMETERS_MISSING_URL' value='23'/>
+<enum name='LIGHT_ID_NOT_FOUND' value='41'/>
+<enum name='NO_CONNECTION' value='21'/>
+<enum name='NO_UPDATE' value='0'/>
+<enum name='ON_OFF_LIGHT' value='5'/>
+<enum name='PUSHLINK_NO_CONNECTION' value='60'/>
+<enum name='PUSHLINK_NO_LOCAL_BRIDGE' value='62'/>
+<enum name='PUSHLINK_TIME_LIMIT_REACHED' value='61'/>
+<enum name='SCHEDULE_ID_NOT_FOUND' value='42'/>
+<enum name='UNKNOWN_LIGHT' value='0'/>
+<enum name='UPDATE_DOWNLOADING' value='1'/>
+<enum name='UPDATE_INSTALLED' value='3'/>
+<enum name='UPDATE_READY_FOR_INSTALL' value='2'/>
+<class name='NSObject'>
+<method selector='createGroupWithName:lightIds:completionHandler:'>
+<arg type='@' name='name' index='0' declared_type='NSString*'/>
+<arg type='@' name='lightIds' index='1' declared_type='NSArray*'/>
+<arg type='@?' name='completionHandler' index='2' declared_type='PHBridgeSendGroupCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSString*'/>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='createSchedule:completionHandler:'>
+<arg type='@' name='schedule' index='0' declared_type='PHSchedule*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendScheduleCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSString*'/>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='getNewFoundLights:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendDictionaryCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSDictionary*'/>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='getSoftwareUpdateStatus:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendSoftwareUpdateStatusCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='PHSoftwareUpdateStatus*'/>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeGroupWithId:completionHandler:'>
+<arg type='@' name='groupIdentifier' index='0' declared_type='NSString*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeScheduleWithId:completionHandler:'>
+<arg type='@' name='scheduleIdentifier' index='0' declared_type='NSString*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='removeWhitelistEntryWithUsername:completionHandler:'>
+<arg type='@' name='username' index='0' declared_type='NSString*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='searchForNewLights:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCacheUpdateAfterSuccessResponseEnabled:'>
+<arg type='B' name='enabled' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLightStateForGroupWithId:lightState:completionHandler:'>
+<arg type='@' name='groupIdentifier' index='0' declared_type='NSString*'/>
+<arg type='@' name='lightState' index='1' declared_type='PHLightState*'/>
+<arg type='@?' name='completionHandler' index='2' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='softwareUpdateRemoveNotify:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='softwareUpdateStart:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='updateConfigurationWithConfiguration:completionHandler:'>
+<arg type='@' name='bridgeConfiguration' index='0' declared_type='PHBridgeConfiguration*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='updateGroupWithGroup:completionHandler:'>
+<arg type='@' name='group' index='0' declared_type='PHGroup*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='updateLightStateForId:withLighState:completionHandler:'>
+<arg type='@' name='lightIdentifier' index='0' declared_type='NSString*'/>
+<arg type='@' name='lightState' index='1' declared_type='PHLightState*'/>
+<arg type='@?' name='completionHandler' index='2' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='updateLightWithLight:completionHandler:'>
+<arg type='@' name='light' index='0' declared_type='PHLight*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='updateScheduleWithSchedule:completionHandler:'>
+<arg type='@' name='schedule' index='0' declared_type='PHSchedule*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='PHBridgeConfiguration'>
+<method selector='bridgeConfigurationAsDictionary'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='bridgeId'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='dhcp'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='gateway'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='getBridgeTimeAsNSDate'>
+<retval type='@' declared_type='NSDate*'/>
+</method>
+<method selector='ipaddress'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='mac'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='name'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='netmask'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='portalServices'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='proxy'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='proxyAddress'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='proxyPort'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='setBridgeId:'>
+<arg type='@' name='bridgeId' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setDhcp:'>
+<arg type='@' name='dhcp' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGateway:'>
+<arg type='@' name='gateway' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setIpaddress:'>
+<arg type='@' name='ipaddress' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setMac:'>
+<arg type='@' name='mac' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setName:'>
+<arg type='@' name='name' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setNetmask:'>
+<arg type='@' name='netmask' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPortalServices:'>
+<arg type='@' name='portalServices' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setProxyAddress:'>
+<arg type='@' name='proxyAddress' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setProxyPort:'>
+<arg type='@' name='proxyPort' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSoftwareUpdate:'>
+<arg type='@' name='softwareUpdate' index='0' declared_type='PHSoftwareUpdateStatus*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSwversion:'>
+<arg type='@' name='swversion' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTime:'>
+<arg type='@' name='time' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUsername:'>
+<arg type='@' name='username' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='softwareUpdate'>
+<retval type='@' declared_type='PHSoftwareUpdateStatus*'/>
+</method>
+<method selector='swversion'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='time'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='username'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='PHBridgeResource'>
+<method selector='identifier'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='isValid:'>
+<arg type='^@' name='errPtr' index='0' declared_type='PHError**'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='name'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='setIdentifier:'>
+<arg type='@' name='identifier' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setName:'>
+<arg type='@' name='name' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='PHBridgeResourcesCache'>
+<method selector='bridgeConfiguration'>
+<retval type='@' declared_type='PHBridgeConfiguration*'/>
+</method>
+<method selector='groups'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='isValid:'>
+<arg type='^@' name='nsErrorPtr' index='0' declared_type='PHError**'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='lights'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='schedules'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='setBridgeConfiguration:'>
+<arg type='@' name='bridgeConfiguration' index='0' declared_type='PHBridgeConfiguration*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGroups:'>
+<arg type='@' name='groups' index='0' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLights:'>
+<arg type='@' name='lights' index='0' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSchedules:'>
+<arg type='@' name='schedules' index='0' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='PHBridgeResourcesReader'>
+<method class_method='true' selector='readBridgeResourcesCache'>
+<retval type='@' declared_type='PHBridgeResourcesCache*'/>
+</method>
+</class>
+<class name='PHBridgeSearching'>
+<method selector='httpRequester'>
+<retval type='@' declared_type='PHHttpRequester*'/>
+</method>
+<method selector='initWithUpnpSearch:andPortalSearch:'>
+<arg type='B' name='searchUpnp' index='0' declared_type='BOOL'/>
+<arg type='B' name='searchPortal' index='1' declared_type='BOOL'/>
+<retval type='@' declared_type='id'/>
+</method>
+<method selector='setHttpRequester:'>
+<arg type='@' name='httpRequester' index='0' declared_type='PHHttpRequester*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSsdpSocket:'>
+<arg type='@' name='ssdpSocket' index='0' declared_type='AsyncUdpSocket*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='ssdpSocket'>
+<retval type='@' declared_type='AsyncUdpSocket*'/>
+</method>
+<method selector='startSearchWithCompletionHandler:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSearchCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSDictionary*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='PHGroup'>
+<method selector='getGroupAsDictionary'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='lightIdentifiers'>
+<retval type='@' declared_type='NSArray*'/>
+</method>
+<method selector='setLightIdentifiers:'>
+<arg type='@' name='lightIdentifiers' index='0' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='PHHueSDK'>
+<method selector='connectsLocal'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='disableCacheUpdateLocalHeartbeat:'>
+<arg type='B' name='disableCacheUpdate' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='disableLocalConnection'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='enableLocalConnectionUsingInterval:'>
+<arg type='i' name='interval' index='0' declared_type='NSInteger'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='firstLocalHeartbeatCompletedAfterStart'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='localConnected'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='notificationManager'>
+<retval type='@' declared_type='PHNotificationManager*'/>
+</method>
+<method selector='phAuthentication'>
+<retval type='@' declared_type='PHAuthentication*'/>
+</method>
+<method selector='phHeartbeat'>
+<retval type='@' declared_type='PHHeartbeat*'/>
+</method>
+<method selector='setBridgeToUseWithIpAddress:macAddress:andUsername:'>
+<arg type='@' name='ipaddress' index='0' declared_type='NSString*'/>
+<arg type='@' name='macaddress' index='1' declared_type='NSString*'/>
+<arg type='@' name='username' index='2' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setFirstLocalHeartbeatCompletedAfterStart:'>
+<arg type='B' name='firstLocalHeartbeatCompletedAfterStart' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setNotificationManager:'>
+<arg type='@' name='notificationManager' index='0' declared_type='PHNotificationManager*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPhAuthentication:'>
+<arg type='@' name='phAuthentication' index='0' declared_type='PHAuthentication*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setPhHeartbeat:'>
+<arg type='@' name='phHeartbeat' index='0' declared_type='PHHeartbeat*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='startPushlinkAuthentication'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='startUpSDK'>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='stopSDK'>
+<retval type='v' declared_type='void'/>
+</method>
+</class>
+<class name='PHLight'>
+<method selector='getLightAsDictionary'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='lightState'>
+<retval type='@' declared_type='PHLightState*'/>
+</method>
+<method selector='modelNumber'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='reachable'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='setLightState:'>
+<arg type='@' name='lightState' index='0' declared_type='PHLightState*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setModelNumber:'>
+<arg type='@' name='modelNumber' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setReachable:'>
+<arg type='B' name='reachable' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setType:'>
+<arg type='i' name='type' index='0' declared_type='PHLightType'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTypeByString:'>
+<arg type='@' name='typeString' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setVersionNumber:'>
+<arg type='@' name='versionNumber' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='supportsBrightness'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='supportsCT'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='supportsColor'>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='type'>
+<retval type='i' declared_type='PHLightType'/>
+</method>
+<method selector='versionNumber'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='PHLightState'>
+<method selector='alert'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='brightness'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='colormodeNumber'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='ct'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='effect'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='getLightStateAsDictionary'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='hue'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='on'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='reachable'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='saturation'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='setAlert:'>
+<arg type='@' name='alert' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setAlertMode:'>
+<arg type='i' name='alertMode' index='0' declared_type='PHLightAlertMode'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setBrightness:'>
+<arg type='@' name='brightness' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setColorMode:'>
+<arg type='i' name='colorMode' index='0' declared_type='PHLightColormode'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setColormodeNumber:'>
+<arg type='@' name='colormodeNumber' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setCt:'>
+<arg type='@' name='ct' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setEffect:'>
+<arg type='@' name='effect' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setEffectMode:'>
+<arg type='i' name='effectMode' index='0' declared_type='PHLightEffectMode'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setHue:'>
+<arg type='@' name='hue' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setOn:'>
+<arg type='@' name='on' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setOnBool:'>
+<arg type='B' name='on' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setReachable:'>
+<arg type='@' name='reachable' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setSaturation:'>
+<arg type='@' name='saturation' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setTransitionTime:'>
+<arg type='@' name='transitionTime' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setX:'>
+<arg type='@' name='x' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setY:'>
+<arg type='@' name='y' index='0' declared_type='NSNumber*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='transitionTime'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='x'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+<method selector='y'>
+<retval type='@' declared_type='NSNumber*'/>
+</method>
+</class>
+<class name='PHNotificationManager'>
+<method class_method='true' selector='defaultManager'>
+<retval type='@' declared_type='PHNotificationManager*'/>
+</method>
+<method selector='deregisterObject:forNotification:'>
+<arg type='@' name='object' index='0' declared_type='id'/>
+<arg type='@' name='notification' index='1' declared_type='NSString*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='deregisterObjectForAllNotifications:'>
+<arg type='@' name='object' index='0' declared_type='id'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='registerObject:withSelector:forNotification:'>
+<arg type='@' name='object' index='0' declared_type='id'/>
+<arg type=':' name='selector' index='1' declared_type='SEL'/>
+<arg type='@' name='notification' index='2' declared_type='NSString*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='sendNotification:'>
+<arg type='@' name='notification' index='0' declared_type='NSString*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+<method selector='sendNotification:withUserInfo:'>
+<arg type='@' name='notification' index='0' declared_type='NSString*'/>
+<arg type='@' name='userInfo' index='1' declared_type='NSDictionary*'/>
+<retval type='B' declared_type='BOOL'/>
+</method>
+</class>
+<class name='PHOverallFactory'>
+<method selector='bridgeSendAPI'>
+<retval type='@' declared_type='id'/>
+</method>
+</class>
+<class name='PHSchedule'>
+<method selector='date'>
+<retval type='@' declared_type='NSDate*'/>
+</method>
+<method selector='getScheduleAsDictionary'>
+<retval type='@' declared_type='NSDictionary*'/>
+</method>
+<method selector='groupIdentifier'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='lightIdentifier'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='scheduleDescription'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='setDate:'>
+<arg type='@' name='date' index='0' declared_type='NSDate*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setGroupIdentifier:'>
+<arg type='@' name='groupIdentifier' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setLightIdentifier:'>
+<arg type='@' name='lightIdentifier' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setScheduleDescription:'>
+<arg type='@' name='scheduleDescription' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setState:'>
+<arg type='@' name='state' index='0' declared_type='PHLightState*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='state'>
+<retval type='@' declared_type='PHLightState*'/>
+</method>
+</class>
+<class name='PHSoftwareUpdateStatus'>
+<method selector='releaseNotesUrl'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+<method selector='setReleaseNotesUrl:'>
+<arg type='@' name='releaseNotesUrl' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUpdateState:'>
+<arg type='i' name='updateState' index='0' declared_type='UpdateState'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='setUpdateText:'>
+<arg type='@' name='updateText' index='0' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method selector='updateState'>
+<retval type='i' declared_type='UpdateState'/>
+</method>
+<method selector='updateText'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<class name='PHUtilities'>
+<method class_method='true' selector='calculateXY:andBrightness:fromColor:forModel:'>
+<arg type='^{CGPoint=ff}' name='xy' index='0' declared_type='CGPoint*'/>
+<arg type='^f' name='brightness' index='1' declared_type='float*'/>
+<arg type='@' name='color' index='2' declared_type='UIColor*'/>
+<arg type='@' name='model' index='3' declared_type='NSString*'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method class_method='true' selector='colorFromXY:andBrightness:forModel:'>
+<arg type='{CGPoint=ff}' name='xy' index='0' declared_type='CGPoint'/>
+<arg type='f' name='brightness' index='1' declared_type='float'/>
+<arg type='@' name='model' index='2' declared_type='NSString*'/>
+<retval type='@' declared_type='UIColor*'/>
+</method>
+<method class_method='true' selector='whitelistIdentifier'>
+<retval type='@' declared_type='NSString*'/>
+</method>
+</class>
+<informal_protocol name='PHBridgeSendAPI'>
+<method type='v20@0:4@8@12@?16' selector='createGroupWithName:lightIds:completionHandler:'>
+<arg type='@' name='name' index='0' declared_type='NSString*'/>
+<arg type='@' name='lightIds' index='1' declared_type='NSArray*'/>
+<arg type='@?' name='completionHandler' index='2' declared_type='PHBridgeSendGroupCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSString*'/>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@?12' selector='createSchedule:completionHandler:'>
+<arg type='@' name='schedule' index='0' declared_type='PHSchedule*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendScheduleCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSString*'/>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v12@0:4@?8' selector='getNewFoundLights:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendDictionaryCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSDictionary*'/>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v12@0:4@?8' selector='getSoftwareUpdateStatus:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendSoftwareUpdateStatusCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='PHSoftwareUpdateStatus*'/>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@?12' selector='removeGroupWithId:completionHandler:'>
+<arg type='@' name='groupIdentifier' index='0' declared_type='NSString*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@?12' selector='removeScheduleWithId:completionHandler:'>
+<arg type='@' name='scheduleIdentifier' index='0' declared_type='NSString*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@?12' selector='removeWhitelistEntryWithUsername:completionHandler:'>
+<arg type='@' name='username' index='0' declared_type='NSString*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v12@0:4@?8' selector='searchForNewLights:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v12@0:4B8' selector='setCacheUpdateAfterSuccessResponseEnabled:'>
+<arg type='B' name='enabled' index='0' declared_type='BOOL'/>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v20@0:4@8@12@?16' selector='setLightStateForGroupWithId:lightState:completionHandler:'>
+<arg type='@' name='groupIdentifier' index='0' declared_type='NSString*'/>
+<arg type='@' name='lightState' index='1' declared_type='PHLightState*'/>
+<arg type='@?' name='completionHandler' index='2' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v12@0:4@?8' selector='softwareUpdateRemoveNotify:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v12@0:4@?8' selector='softwareUpdateStart:'>
+<arg type='@?' name='completionHandler' index='0' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@?12' selector='updateConfigurationWithConfiguration:completionHandler:'>
+<arg type='@' name='bridgeConfiguration' index='0' declared_type='PHBridgeConfiguration*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@?12' selector='updateGroupWithGroup:completionHandler:'>
+<arg type='@' name='group' index='0' declared_type='PHGroup*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v20@0:4@8@12@?16' selector='updateLightStateForId:withLighState:completionHandler:'>
+<arg type='@' name='lightIdentifier' index='0' declared_type='NSString*'/>
+<arg type='@' name='lightState' index='1' declared_type='PHLightState*'/>
+<arg type='@?' name='completionHandler' index='2' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@?12' selector='updateLightWithLight:completionHandler:'>
+<arg type='@' name='light' index='0' declared_type='PHLight*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+<method type='v16@0:4@8@?12' selector='updateScheduleWithSchedule:completionHandler:'>
+<arg type='@' name='schedule' index='0' declared_type='PHSchedule*'/>
+<arg type='@?' name='completionHandler' index='1' declared_type='PHBridgeSendErrorArrayCompletionHandler' function_pointer='true'>
+<arg type='@' declared_type='NSArray*'/>
+<retval type='v' declared_type='void'/>
+</arg>
+<retval type='v' declared_type='void'/>
+</method>
+</informal_protocol>
+</signatures>
